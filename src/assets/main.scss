@@ -1,0 +1,137 @@
+$main: #2c3e50;
+$disabled: #f1f1f1;
+
+:root{
+	font-size: 16px;
+}
+.flex{
+	display: flex;
+}
+.col{
+	flex-direction: column;
+}
+.row{
+	flex-direction: row;
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.justify-between{
+	justify-content: space-between;
+}
+.justify-center{
+	justify-content: center;
+}
+.justify-end{
+	justify-content: flex-end;
+}
+.justify-start{
+	justify-content: flex-start;
+}
+.items-center{
+	align-items: center;
+}
+.items-end{
+	align-items: flex-end;
+}
+.items-start{
+	align-items: flex-start;
+}
+.relative{
+	position: relative;
+}
+
+.hidden{
+	display: none;
+}
+.content{
+	width: calc(100% - 4rem);
+	max-width: 1180px;
+	padding: 0 2rem;
+}
+
+.py-4{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.mr-2{
+	margin-right: 0.5rem;
+}
+.mb-4{
+	margin-bottom: 1rem;
+}
+.cursor-pointer{
+	cursor: pointer
+}
+.h-auto{
+	height: auto;
+}
+.w-auto{
+	width: auto;
+}
+.w-100{
+	width: 100%;
+}
+.w-2\/12{
+	width: 100%;
+	max-width: calc(100% / 6);
+}
+.w-4\/12{
+	width: 100%;
+	max-width: calc(100% / 3);
+}
+.w-6\/12{
+	width: 100%;
+	max-width: calc(100% / 2);
+}
+
+$obj: (
+	"main": $main,
+	"white": white,
+	"disabled": $disabled
+);
+@each $key, $value in $obj{
+	.bg\:#{$key}{
+		background-color: $value;
+	}
+	.color\:#{$key}{
+		color: $value;
+		fill: $value;
+	}
+	.hover\:bg\:#{$key}:hover{
+		background-color: $value;
+	}
+	.hover\:color\:#{$key}:hover{
+		color: $value;
+		fill: $value;
+	}
+	.active\:bg\:#{$key}:active{
+		background-color: $value;
+	}
+	.active\:color\:#{$key}:active{
+		color: $value;
+		fill: $value;
+	}
+}
+
+
+
+body{
+	margin: 0 auto;
+	width: 100%;
+	max-width: calc(1180px + 2rem);
+}
+
+.tab{
+	&:first-child{
+		border-top: 1px solid #cbcfd3;
+	}
+	&>*{
+		padding: 0.25rem 1rem;
+		border-right: 1px solid #cbcfd3;
+		border-bottom: 1px solid #cbcfd3;
+		&:first-child{
+			border-left: 1px solid #cbcfd3;
+		}
+	}
+}
